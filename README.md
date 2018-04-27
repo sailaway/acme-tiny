@@ -108,6 +108,19 @@ server {
 }
 ```
 
+```apache
+#Example for apache,in virtual host
+    SSLEngine on
+    SSLProtocol -all +TLSv1 +TLSv1.1 +TLSv1.2
+    SSLCipherSuite EECDH+AESGCM:EDH+AESGCM:AES256+EECDH:ECDHE-RSA-AES128-SHA:DHE-RSA-AES128-GCM-SHA256:AES256+EDH:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GC$
+    SSLHonorCipherOrder On
+    SSLCertificateFile  .../acme-tiny/signed.crt
+    SSLCertificateKeyFile .../acme-tiny/domain.key
+    SSLCertificateChainFile .../acme-tiny/chained.pem
+    ...the rest
+``` 
+
+
 ### Step 4: Get a signed certificate!
 
 Now that you have setup your server and generated all the needed files, run this
